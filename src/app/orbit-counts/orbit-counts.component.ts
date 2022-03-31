@@ -18,12 +18,13 @@ export class OrbitCountsComponent implements OnInit {
   }
 
   satelliteCount(type: string): number {
-    let count = 0;
+    let count = 1;
     for (let i = 0; i < this.satellites.length; i++) {
       if (type.toLowerCase() === this.satellites[i].type.toLowerCase())
         count++; //= count + 1;
     }
     return count;
+	
   }
 
   /*countByType(type: string): number {
