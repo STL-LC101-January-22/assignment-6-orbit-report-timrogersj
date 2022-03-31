@@ -17,7 +17,7 @@ export class OrbitCountsComponent implements OnInit {
   ngOnInit() {
   }
 
-  counts(type: string ): number {
+  /*counts(type: string ): number {
     let numArr = [];
     for (let i = 0; i < this.satellites.length; i++){
       if (this.satellites[i].type.toLowerCase() === type) {
@@ -26,9 +26,9 @@ export class OrbitCountsComponent implements OnInit {
       }
       return numArr.length;
 	
-  }
+  }*/
 
-  /*countByType(type: string): number {
+	counts(type: string): number {
 	let count = 0;
 	type = type.substring(0, type.length -1);
 	if (this.satellites && type !=='Total') {
@@ -42,8 +42,7 @@ export class OrbitCountsComponent implements OnInit {
  		} else {
 		return this.satellites.length;
 
- }*/
-
-
-
+ 	}
+	 
+	}
 }
