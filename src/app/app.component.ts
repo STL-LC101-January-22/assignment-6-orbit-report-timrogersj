@@ -37,13 +37,51 @@ export class AppComponent {
 
 	}
 
-	search(searchTerm: string): void {
+	search(searchTerm: string, byName: boolean, byType: boolean, byOperational: boolean, byOrbitType: boolean, byLaunchDate: boolean ): void {
 		let matchingSatellites: Satellite[] = [];
 		searchTerm = searchTerm.toLowerCase();
-		for(let i=0; i < this.sourceList.length; i++) {
-			let name = this.sourceList[i].name.toLowerCase();
-			if (name.indexOf(searchTerm) >= 0) {
-				matchingSatellites.push(this.sourceList[i]);
+		if (byName) {
+			for(let i=0; i < this.sourceList.length; i++) {
+				let name = this.sourceList[i].name.toLowerCase();
+				if (name.indexOf(searchTerm) >= 0) {
+					matchingSatellites.push(this.sourceList[i]);
+				}
+			}
+		}
+
+		if (byOperational) {
+			for(let i=0; i < this.sourceList.length; i++) {
+				let operational = String(this.sourceList[i].operational);
+				if (operational.indexOf(searchTerm) >= 0) {
+					matchingSatellites.push(this.sourceList[i]);
+				}
+			}
+		}
+
+		if (byType) {
+			for(let i=0; i < this.sourceList.length; i++) {
+				let type = this.sourceList[i].type.toLowerCase();
+				if (type.indexOf(searchTerm) >= 0) {
+					matchingSatellites.push(this.sourceList[i]);
+				}
+			}
+		}
+
+		if (byOrbitType) {
+			for(let i=0; i < this.sourceList.length; i++) {
+				let orbitType = this.sourceList[i].orbitType.toLowerCase();
+				if (orbitType.indexOf(searchTerm) >= 0) {
+					matchingSatellites.push(this.sourceList[i]);
+				}
+			}
+		}
+
+		if (byLaunchDate) {
+			for(let i=0; i < this.sourceList.length; i++) {
+				let launchDate = this.sourceList[i].launchDate.toLowerCase();
+				if (launchDate.indexOf(searchTerm) >= 0) {
+					matchingSatellites.push(this.sourceList[i]);
+				}
 			}
 		}
 		// assign this.displayList to be the array of matching satellites
